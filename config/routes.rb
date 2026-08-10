@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "#index"
+  root "foods#index"
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   resources :users, only: [:new, :create]
+  resources :foods, only: [:index, :new, :create, :destroy]
 
   
 end

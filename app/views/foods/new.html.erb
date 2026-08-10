@@ -1,0 +1,45 @@
+<h1>Add Food</h1>
+
+<%= form_with model: @food do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :brand %>
+    <%= form.text_field :brand %>
+  </div>
+
+  <div>
+    <%= form.label :calories %>
+    <%= form.number_field :calories %>
+  </div>
+
+  <div>
+    <%= form.label :protein_grams %>
+    <%= form.number_field :protein_grams, step: 0.1 %>
+  </div>
+
+  <div>
+    <%= form.label :carbs_grams %>
+    <%= form.number_field :carbs_grams, step: 0.1 %>
+  </div>
+
+  <div>
+    <%= form.label :fat_grams %>
+    <%= form.number_field :fat_grams, step: 0.1 %>
+  </div>
+
+  <div>
+    <%= form.label :serving_size %>
+    <%= form.number_field :serving_size, step: 0.1 %>
+  </div>
+
+  <div>
+    <%= form.label :serving_unit %>
+    <%= form.text_field :serving_unit %>
+  </div>
+
+  <%= form.submit "Create Food" %>
+<% end %>

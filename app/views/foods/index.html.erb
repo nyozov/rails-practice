@@ -1,0 +1,27 @@
+<h1>FOODS</h1>
+
+<h1>Add Food</h1>
+
+<%= form_with model: @food do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :calories %>
+    <%= form.number_field :calories %>
+  </div>
+  <%= form.submit "Create Food" %>
+<% end %>
+
+<% @foods.each do |food| %>
+  <div>
+    <h3><%= food.name %></h3>
+    <p>Calories: <%= food.calories %></p>
+    <p>Created at: <%= food.created_at %></p>
+    <%= button_to "Delete", food_path(food), method: :delete %>
+  </div>
+
+<% end %>
+  <h3>Total Calories</h3>
+  <p><%= @total_calories %></p>

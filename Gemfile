@@ -65,6 +65,10 @@ group :development do
 
   gem "ruby-lsp"
 
+  gem "rubocop"
+  
+  gem "erb-formatter"
+
 
 end
 
@@ -73,3 +77,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "htmlbeautifier", "~> 1.4", group: :development
